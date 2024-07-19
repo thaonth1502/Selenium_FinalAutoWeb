@@ -60,30 +60,8 @@ public class TestFinalAutoWeb extends BaseClass {
         this.productDetail.switchToProductDetail();
         //verify Product Image is displayed
         this.productDetail.productImageDisplay();
-        //verify barQR of product is displayed
-        this.productDetail.barQRDisplay();
-        //verify type display
-        this.productDetail.typeDisplay();
-        //verify name display
-        this.productDetail.nameDisplay();
-        //verify code display
-        this.productDetail.codeDisplay();
-        //verify category display
-        this.productDetail.categoryDisplay();
-        //verify unit display
-        this.productDetail.unitDisplay();
-        //verify price display
-        this.productDetail.priceDisplay();
-        //verify cost display
-        this.productDetail.costDisplay();
-        //verify taxMethod display
-        this.productDetail.taxMethodDisplay();
-        //verify taxRate display
-        this.productDetail.taxRateDisplay();
-        //verify alert quantity display
-        this.productDetail.quantityDisplay();
-        //verify product detail display
-        this.productDetail.productDetailLableDisplay();
+        //Verify inform của Product Detail
+        this.productDetail.productDetailDisplay();
         //back to previous page
         this.productDetail.backPreviousPage();
     }
@@ -157,4 +135,5 @@ public class TestFinalAutoWeb extends BaseClass {
         this.addPurchase.clickAddPruchaseButton();
         this.addPurchase.verifyMessageSuccess();
     }
+
 }
