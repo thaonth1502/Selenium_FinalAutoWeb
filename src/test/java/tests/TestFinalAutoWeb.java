@@ -1,5 +1,8 @@
 package tests;
 
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import pages.BaseClass;
 import pages.Common;
@@ -7,8 +10,17 @@ import pages.Common;
 import java.text.ParseException;
 
 public class TestFinalAutoWeb extends BaseClass {
+//    @BeforeMethod
+//    public void login() {
+//        //input username
+//        this.loginPage.inputUsername(Common.USERNAME);
+//        //input password
+//        this.loginPage.inputPassword(Common.PASSWORD);
+//        //click login button
+//        this.loginPage.clickLoginButton();
+//    }
 
-    @Test (priority = 0)
+    @Test(priority = 0)
     public void tc01(){
         //Verify Title
         this.loginPage.verifyTitle();
@@ -22,7 +34,7 @@ public class TestFinalAutoWeb extends BaseClass {
         this.loginPage.loginButtonDisplay();
     }
 
-    @Test (priority = 1)
+    @Test(priority = 1)
     public void tc02(){
         //input username
         this.loginPage.inputUsername(Common.USERNAME);
@@ -54,6 +66,10 @@ public class TestFinalAutoWeb extends BaseClass {
 
     @Test (priority = 3)
     public void tc04(){
+        //Click Products left menu
+        this.dashboardPage.clickMenuProducts();
+        //Click on List Products submenu of Products
+        this.dashboardPage.clickMenuListProducts();
         //click Lemon product
         this.products.clickLemonProduct();
         //Switch to Product Detail form

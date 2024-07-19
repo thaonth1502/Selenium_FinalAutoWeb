@@ -57,12 +57,12 @@ public class PrintBarcodesPage {
         }
         Thread.sleep(1000);
     }
-    public void addProduct(String productName){
+    public void addProduct(String productName) throws InterruptedException {
         this.driver.findElement(this.boxAddItem).sendKeys(productName);
     }
     public void selectStyle() throws InterruptedException {
         this.driver.findElement(this.boxStyle).click();
-        Thread.sleep(2000);
+        Thread.sleep(1000);
         this.driver.findElement(By.xpath("//ul[@class='select2-results']//li/div[contains(text(),'18')]")).click();
     }
     public void printDisplay(){
