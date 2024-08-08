@@ -1,8 +1,5 @@
 package tests;
 
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import pages.BaseClass;
 import pages.Common;
@@ -10,15 +7,6 @@ import pages.Common;
 import java.text.ParseException;
 
 public class TestFinalAutoWeb extends BaseClass {
-//    @BeforeMethod
-//    public void login() {
-//        //input username
-//        this.loginPage.inputUsername(Common.USERNAME);
-//        //input password
-//        this.loginPage.inputPassword(Common.PASSWORD);
-//        //click login button
-//        this.loginPage.clickLoginButton();
-//    }
 
     @Test(priority = 0)
     public void tc01(){
@@ -132,7 +120,7 @@ public class TestFinalAutoWeb extends BaseClass {
 
     @Test (priority = 8)
     public void tc09() throws InterruptedException, ParseException {
-        this.dashboardPage.clickmenuPurchases();
+        this.dashboardPage.clickMenuPurchases();
         this.dashboardPage.clickmenuListPurchases();
         this.purchaseList.verifyNumberItems();
         this.purchaseList.verifyReferenceNoDesc();
@@ -141,8 +129,8 @@ public class TestFinalAutoWeb extends BaseClass {
 
     @Test (priority = 9)
     public void tc10() throws InterruptedException{
-        this.dashboardPage.clickmenuPurchases();
-        this.dashboardPage.clickmenuAddPurchase();
+        this.dashboardPage.clickMenuPurchases();
+        this.dashboardPage.clickMenuAddPurchase();
         this.addPurchase.clickSupplierField();
         this.addPurchase.searchSupplier("a");
         this.addPurchase.selectSupplier();

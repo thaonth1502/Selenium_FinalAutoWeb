@@ -19,28 +19,27 @@ public class DashboardPage {
     By menuListProduct = By.xpath("//li[@id = 'products_index']//span[1]");
     By menuBarCodePrint = By.id("products_print_barcodes");
     By menuSale = By.linkText("Sales");
-    By menuAddSale = By.xpath("//li[@id= 'sales_add']//span[1]");;
+    By menuAddSale = By.xpath("//li[@id= 'sales_add']//span[1]");
     By menuPurchases = By.xpath("//ul[@class ='nav main-menu']//li[5]/a/span[contains(text(),'Purchases')]");
     By menuListPurchases = By.xpath("//*[@id='purchases_index']//span[1]");
     By menuAddPurchase = By.xpath("//*[@id='purchases_add']//span[1]");
-
 
     public DashboardPage(WebDriver driver) {
         this.driver = driver;
         this.actions = new Actions(this.driver);
     }
 
-    public void clickmenuAddPurchase(){
+    public void clickMenuAddPurchase(){
         WebElement menuAddPurchase = this.driver.findElement(this.menuAddPurchase);
         actions.moveToElement(menuAddPurchase).build().perform();
         if(menuAddPurchase.isDisplayed()) {
             menuAddPurchase.click();
         }else {
-            clickmenuPurchases();
+            clickMenuPurchases();
             menuAddPurchase.click();
         }
     }
-    public void clickmenuPurchases(){
+    public void clickMenuPurchases(){
         WebElement menuPurchases = this.driver.findElement(this.menuPurchases);
         actions.moveToElement(menuPurchases).build().perform();
         menuPurchases.click();
@@ -52,7 +51,7 @@ public class DashboardPage {
         if(menuListPurchases.isDisplayed()) {
             menuListPurchases.click();
         }else {
-            clickmenuPurchases();
+            clickMenuPurchases();
             menuListPurchases.click();
         }
     }
@@ -131,7 +130,7 @@ public class DashboardPage {
             menuBarCodePrint.click();
         }
     }
-    public void gotoDashboardPage(){
+    public void goToDashboardPage(){
         this.driver.navigate().to("https://sma.tec.sh/admin/");
     }
 }
